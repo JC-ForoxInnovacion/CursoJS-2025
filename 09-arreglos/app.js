@@ -1,6 +1,14 @@
+function sep() {
+  return "===============================";
+}
+
 // Declaración de arrays
 
-const myArr = new Array(10);
+console.log("Declaración de arrays");
+console.log("new Array(n):");
+console.log(sep());
+
+let myArr = new Array(10);
 
 console.log(myArr);
 
@@ -8,6 +16,9 @@ console.log(myArr);
  * (10) [vacío × 10]
  * length : 10
  */
+
+console.log("[]:");
+myArr = new Array(10);
 
 let myNewEmptyArray = [];
 console.log(myNewEmptyArray);
@@ -23,6 +34,9 @@ console.log("arrNum:", arrNum, "arrNum.length", arrNum.length);
  * arrNum: (333) [vacío × 333]
  */
 
+console.log("Array <- string");
+console.log(sep());
+
 elem = "Esto es un string";
 let arrStr = Array(elem); //Casting string -> array
 console.log("elem:", elem);
@@ -34,6 +48,8 @@ console.log("arrStr:", arrStr, "arrStr.length", arrStr.length);
  * arrStr: ['Esto es un string'] length 1
  */
 
+console.log("Array <- boolean");
+console.log(sep());
 elem = true;
 let arrBool = Array(elem); //Casting booleano -> array
 console.log("elem:", elem);
@@ -45,6 +61,9 @@ console.log("arrBool:", arrBool, "arrBool.length", arrBool.length);
  * arrBool: [true] arrBool.length 1
  */
 
+console.log("Array <- array");
+console.log(sep());
+
 elem = [
   0,
   true,
@@ -55,7 +74,7 @@ elem = [
   { clave: "Valor" },
 ];
 
-let arrArray = Array(elem); //Casting booleano -> array
+let arrArray = Array(elem);
 console.log("elem:", elem);
 console.log("arrArray:", arrArray, "arrArray.length", arrArray.length);
 
@@ -64,6 +83,9 @@ console.log("arrArray:", arrArray, "arrArray.length", arrArray.length);
  *
  * arrArray: [Array(7)] 0: (7) [0, true, 'patata', null, undefined, Array(3), {…}],  * arrArray.length 1
  */
+
+console.log("Array <- object");
+console.log(sep());
 
 elem = { claveX: "ValorY" };
 let arrObj = Array(elem); //Casting booleano -> array
@@ -85,6 +107,9 @@ console.log("arrObj:", arrObj, "arrObj.length", arrObj.length);
  *  f1c4
  */
 
+console.log("Arreglos multidimensionales");
+console.log(sep());
+
 let myMatrix = [
   ["A0", "A1", "A2", "A3"],
   ["B0", "B1", "B2", "B3"],
@@ -97,6 +122,8 @@ console.log("f4c1:", myMatrix[3][0]);
 console.log("f3c3:", myMatrix[2][2]);
 console.log("f1c4:", myMatrix[0][3]);
 
+console.log("Arreglos multidimensionales - 4 Dimensiones");
+console.log(sep());
 let myMatrix2 = [
   [[[["A0000", "A0001"], "A001"], "A01"], "A1", "A2", "A3"],
   ["B0", "B1", "B2", "B3"],
