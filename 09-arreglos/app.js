@@ -104,8 +104,8 @@ let myMatrix2 = [
   ["D0", "D1", "D2", "D3"],
 ];
 
-console.log(myMatrix2[0]);
-console.log(myMatrix2[0][0]);
-console.log(myMatrix2[0][0][0]);
-console.log(myMatrix2[0][0][0][0]);
-console.log(myMatrix2[0][0][0][0][1]);
+console.log("myMatrix2[0]:", myMatrix2[0]);
+console.log("myMatrix2[0][0]:", myMatrix2[0][0]);
+console.log("myMatrix2[0][0][0]", myMatrix2[0][0][0]);
+console.log("myMatrix2[0][0][0][0]:", myMatrix2[0][0][0][0]);
+console.log("myMatrix2[0][0][0][0][1]:", myMatrix2[0][0][0][0][1]);
