@@ -18,11 +18,12 @@ console.log(myArr);
  */
 
 console.log("[]:");
-myArr = new Array(10);
 
 let myNewEmptyArray = [];
 console.log(myNewEmptyArray);
 
+console.log("Array <- number");
+console.log(sep());
 let elem = 333;
 let arrNum = Array(elem); //Casting num -> array
 console.log("elem:", elem);
@@ -50,6 +51,7 @@ console.log("arrStr:", arrStr, "arrStr.length", arrStr.length);
 
 console.log("Array <- boolean");
 console.log(sep());
+
 elem = true;
 let arrBool = Array(elem); //Casting booleano -> array
 console.log("elem:", elem);
@@ -124,6 +126,7 @@ console.log("f1c4:", myMatrix[0][3]);
 
 console.log("Arreglos multidimensionales - 4 Dimensiones");
 console.log(sep());
+
 let myMatrix2 = [
   [[[["A0000", "A0001"], "A001"], "A01"], "A1", "A2", "A3"],
   ["B0", "B1", "B2", "B3"],
