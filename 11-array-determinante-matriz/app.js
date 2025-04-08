@@ -1,11 +1,9 @@
-/**
- * Calcular el determinante de una m de 3x3
- *        |a b c|
- * det(A) |d e f|
- *        |g h i|
- *   
- * det(A) = a(ei−fh)−b(di−fg)+c(dh−eg)
- */
+console.log(`Calcular el determinante de una m de 3x3
+       |a b c|
+det(A) |d e f|
+       |g h i|
+  
+det(A) = a(ei−fh)−b(di−fg)+c(dh−eg)`);
 
 // m = m
 const m = [
