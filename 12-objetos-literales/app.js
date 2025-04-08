@@ -259,7 +259,7 @@ animal.colorPelo[0] = "lila";
 console.log(animal);
 
 
-console.log("Listar las propiedades de un objeto");
+console.log("Listar las propiedades de un objeto.");
 sep();
 
 const tiposDeDatos = {
