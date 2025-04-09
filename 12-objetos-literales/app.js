@@ -173,7 +173,7 @@ let persona = {
 console.log(persona);
 
 
-clg("Crear una dinámicamente una propiedad en el objeto");
+console.log("Crear una dinámicamente una propiedad en el objeto");
 sep();
 
 ciuNac = 'Madrid';
