@@ -148,12 +148,18 @@ console.log(res);
 // Si hay MÁS variables que elementos en el array el valor almacenado
 // será undefined
 
-let [ nombre, apellidos, edad, ciudad ] = desestructurar("Juan Carlos", "Varela Iglesias", 53)
+// NOTA: comentamos este let porque más abajo en la desesctructuración de objetos
+//       pretendemos utilizar las mismas variables. EVIDENTEMENTE no puedes 
+//       redeclarar con let y el MISMO NOMBRE
+//       let { nombre, apellidos, edad, ciudad } = desestructurar("Juan Carlos", "Varela Iglesias", 53)
 
-console.log({nombre});
-console.log({apellidos});
-console.log({edad});
-console.log({ciudad});
+
+// let [ nombre, apellidos, edad, ciudad ] = desestructurar("Juan Carlos", "Varela Iglesias", 53)
+
+// console.log({nombre});
+// console.log({apellidos});
+// console.log({edad});
+// console.log({ciudad});
 
 
 console.log("Desestructuración de un objeto literal");
@@ -166,10 +172,12 @@ function crearPersona2 (nombre, apellidos, edad) {
 res = crearPersona2("Juan Carlos", "Varela Iglesias", 53);
 console.log({res});
 
+//SOLUCION: Utiliza un par clave: valor para renombrar la variable independiente 
+// en el objeto de desestructuración tal como se hace en siguiente ejemplo.
 
-//{ nombre, apellidos, edad } = crearObjeto("Juan Carlos", "Varela Iglesias", 53);
+let { nombre: nombrePersona, apellidos: apellidosPersona, edad: edadPersona, ciudad: ciudadPersona } = crearPersona2("Juan Carlos", "Varela Iglesias", 53);
 
-// console.log({nombrePersona});
-// console.log({apellidosPersona});
-// console.log({edadPersona});
-// console.log({ciudad});
+console.log({nombrePersona});
+console.log({apellidosPersona});
+console.log({edadPersona});
+console.log({ciudadPersona});
