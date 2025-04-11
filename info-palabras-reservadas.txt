@@ -1,0 +1,39 @@
+Lista oficial y actualizada de palabras reservadas del lenguaje JavaScript (según la última especificación ECMAScript) directamente desde la especificación oficial de ECMAScript publicada por Ecma International.
+
+📚 Fuente oficial
+Sitio web de Ecma International (ECMA-262):
+🔗 https://tc39.es/ecma262/
+
+Este sitio siempre contiene la última versión vigente de la especificación.
+
+📌 Sección específica de palabras reservadas
+Dentro de la especificación, puedes consultar la sección:
+
+11.6 Names and Keywords
+
+Ahí encontrarás:
+
+- Palabras clave reservadas (keywords)
+
+- Identificadores futuros (future reserved words)
+
+- Palabras reservadas estrictas (strict mode reserved)
+
+- Literales (null, true, false)
+
+- Identificadores restringidos como eval y arguments
+
+🔍 ¿Y si no quieres leer toda la especificación?
+También puedes consultar una fuente secundaria confiable como:
+
+MDN Web Docs - Palabras clave de JavaScript
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Lexical_grammar#palabras_reservadas
+
+
+GitHub - tc39/ecma262: El repositorio oficial del comité que desarrolla ECMAScript.
+https://github.com/tc39/ecma262
+
+
+URL's de interés:
+https://mothereff.in/js-variables#%E0%B2%A0%5f%E0%B2%A0
+https://mathiasbynens.be/notes/javascript-identifiers

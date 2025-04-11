@@ -1,0 +1,44 @@
+🔝 Guías de estilo más populares para JavaScript (con enlaces directos):
+
+Airbnb JavaScript Style Guide
+Una de las más utilizadas y respetadas.
+📎 https://github.com/airbnb/javascript
+
+Google JavaScript Style Guide
+Muy clara y estructurada, usada internamente por Google.
+📎 https://google.github.io/styleguide/jsguide.html
+
+StandardJS (JavaScript Standard Style)
+Estilo minimalista y sin configuración. No usa punto y coma.
+📎 https://standardjs.com/
+
+Idiomatic.js
+Busca coherencia más que imponer reglas estrictas.
+📎 https://github.com/rwaldron/idiomatic.js
+
+Prettier
+No es exactamente una guía, sino un formateador que impone su propio estilo.
+📎 https://prettier.io/
+
+📦 Otras guías útiles:
+XO
+📎 https://github.com/xojs/xo
+
+Node.js Style Guide
+📎 https://github.com/felixge/node-style-guide
+
+Mozilla JavaScript Guide (educativa)
+📎 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+
+🎯 ¿Cuál deberías usar tú?
+Depende de:
+
+El equipo o empresa donde trabajes
+
+Si quieres configuraciones flexibles o estrictas
+
+Si priorizas legibilidad humana o automatización
+
+
+IMPORTANTE: 
+  La mejor combinación es Guía de estilos + ESLint + Prettier
