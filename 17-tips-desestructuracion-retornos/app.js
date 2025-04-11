@@ -129,7 +129,7 @@ conNArgumentos2("Teófilo", "Brazoduro", 73, "Vigo");
 
 
 
-console.log("Desestructuración del arreglo arguments/...args");
+console.log("Desestructuración del arreglo arguments <- en funciones tradicionales / ...args <- funciones flecha");
 sep();
 
 function desestructurar(...args) {
@@ -181,3 +181,103 @@ console.log({nombrePersona});
 console.log({apellidosPersona});
 console.log({edadPersona});
 console.log({ciudadPersona});
+
+console.log("Desestructuración de argumentos");
+sep();
+
+let persona = {
+  nombre: "Manuel",
+  apellidos: "Pérez Gómez",
+  edad: 30,
+  hijos: ["Manolito", "Manuelita"],
+  poseeCoche: true,
+  coche: {
+    marca: "Ferrari",
+    modelo: "F-350",
+    matricula: "PO-3640-M"
+  }
+}
+
+console.log("SIN desestructurar");
+sep();
+function imprimirPersona ( persona ) {
+  console.log("matricula:", persona.coche.matricula);
+  console.log("hijos:", persona.hijos);
+  console.log("apellidos:", persona.apellidos);
+}
+
+imprimirPersona(persona);
+
+console.log("Desestructurado");
+sep();
+
+function imprimirPersona2 ( {nombre, apellidos, edad, hijos: descendientes, hijos: [hijo, hija], poseeCoche: tieneCoche, coche: {marca,modelo, matricula} } ) {
+
+  /**
+   * nombre
+   * apellidos
+   * edad, 
+   * hijos: descendientes <- se renombra la propiedad
+   * hijos: [hijo, hija] <- se desestructura el array hijos
+   * poseeCoche: tieneCoche <- se renombra la propiedad
+   * coche: {marca,modelo, matricula} } <- se desestructura el objeto coche
+   */
+  console.log({nombre});
+  console.log({apellidos});
+  console.log({edad});
+  console.log({descendientes});
+  console.log({hijo});
+  console.log({hija});
+  console.log({tieneCoche});
+  console.log({marca});
+  console.log({modelo});
+  console.log({matricula});
+
+}
+
+imprimirPersona2(persona);
+
+console.log(persona);
+
+console.log("Desestructurando... ando");
+sep();
+
+let nivel0 = {
+  prop_nivel0: "Nivel 0",
+  otra_prop_nivel0: true,
+
+  nivel1:{
+    prop_nivel1: "Nivel 1",
+    otra_prop_nivel1: "Propiedad interna del nivel 1",
+
+    nivel2: {
+      prop_nivel2: "Nivel 2",
+      otra_prop_nivel2: 1 * 2,
+    }
+  }
+}
+
+console.log({nivel0});
+
+// 1) Desestructurar las propiedades que no son objeto
+let { prop_nivel0: pN0, otra_prop_nivel0: oPN0} = nivel0
+console.log({pN0});
+console.log({oPN0});
+
+// 2) Almacenar el objeto nivel1 en una variable
+// 3 Desestructurar las propiedades que no son objeto
+
+let n1 = nivel0.nivel1;
+console.log(n1);
+let {prop_nivel1: pN1, otra_prop_nivel1: oPN1} = n1;
+console.log({pN1});
+console.log({oPN1});
+
+// 4) Almacenar el objeto nivel2 en una variable
+// 5) Desestructurar las propiedades que no son objeto
+let n2 = nivel0.nivel1.nivel2;
+console.log({n2})
+
+let {prop_nivel2: pN2, otra_prop_nivel2: oPN2} = n2;
+console.log({pN2});
+console.log({oPN2});
