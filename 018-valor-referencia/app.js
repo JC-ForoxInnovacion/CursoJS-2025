@@ -40,6 +40,7 @@ console.log("num2 === num4:", num2 === num4); //
 
 
 
+
 console.log("strings (primitivo), por valor (explicación en números)")
 sep();
 
@@ -55,6 +56,9 @@ console.log({str1, str2});
 
 console.log("str1 === str2:", str1 === str2);
 
+
+
+
 console.log("booleanos (primitivo), por valor");
 sep();
 
@@ -65,6 +69,7 @@ console.log({bool1, bool2});
 
 bool1 = true;
 console.log({bool1, bool2});
+
 
 
 
@@ -80,6 +85,7 @@ console.log({null1, null2});
 
 
 
+
 console.log("undefined (primitivo), por valor");
 sep();
 
@@ -91,16 +97,10 @@ undef1 = true;
 console.log({undef1, undef2});
 
 
+
 console.log("Estructuras Tipos y Subtipos de Objetos / NO primitivos, por referencia");
-console.log("Punciones, por refencia")
+console.log("Funciones, por refencia")
 sep();
-
-let func1 = (nombre) => console.log(`Adiós ${nombre}`);
-
-let func2 = func1;
-
-console.log({func1});
-console.log({func2});
 
 /**
  * A diferencia de funcionamiento en tipos de datos primitivos
@@ -108,6 +108,14 @@ console.log({func2});
  * y su valor son iguales, en datos estructurales u objetos
  * devuelve true cuando comparten referencia
  */
+
+
+let func1 = (nombre) => console.log(`Adiós ${nombre}`);
+
+let func2 = func1;
+
+console.log({func1});
+console.log({func2});
 
 
 // Comparar referencias
@@ -125,8 +133,10 @@ console.log("Object.is(func1, func2): ",Object.is(func1, func2))
 
 
 
+
+console.log("Arreglos");
 console.log("Arreglos 1, por referencia. UTILIZANDO TODO el arreglo");
-sep()
+sep();
 
 let arr1 = [0,1,2,3];
 let arr2 = arr1;
@@ -134,9 +144,10 @@ let arr2 = arr1;
 console.log("arr1:", arr1, "arr2:", arr2);
 console.log("Object.is(arr1, arr2:", Object.is(arr1, arr2));
 
-arr1 = [4,5,6,7]; // SE ROMPE la referencia al redefinir el arr
+arr1 = [4,5,6,7]; // SE ROMPE la referencia al redefinir el arreglo
 console.log("arr1:", arr1, "arr2:", arr2);
 console.log("Object.is(arr1, arr2):", Object.is(arr1, arr2));
+
 
 
 console.log("Arreglos 2, por referencia UTILIZANDO ELEMENTOS del arreglo")
@@ -153,9 +164,10 @@ console.log("arrNum1:", arrNum1, "arrNum2", arrNum2);
 
 
 
+
 console.log("OBJETOS, idem a funciones y arreglos");
-// Objetos 1
 console.log("Objetos 1");
+sep();
 
 let obj1 = {
   nombre: "Juan Carlos",
@@ -193,7 +205,11 @@ console.log("objNew2", objNew2);
 
 
 
+
 console.log("Instanciando objetos con new");
+console.log(
+`VER 002-Uso-de-new-en-arreglos-y-objetos-literales.pdf
+en directorio 999-notas-apuntes-documentos-de-interes/`)
 sep();
 
 let arrNew1 = [1,2,3];
@@ -208,6 +224,9 @@ let objStr2 = new Object(objStr1);
 console.log("objStr1 === objStr2:", objStr1 === objStr2);
 
 objStr2.nombre = "Olga";
+objStr2.apellidos = "Iglesias Ferreiro";
 
-console.log({objStr1});
-console.log({objStr2});
+console.log({ objStr1 });
+console.log({ objStr2 });
+
+console.log("objStr1 === objStr2:", objStr1 === objStr2);
