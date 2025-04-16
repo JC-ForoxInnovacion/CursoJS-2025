@@ -1,4 +1,8 @@
-let fecha, dia, horaActual, horaApertura, mensaje;
+let fecha;
+let dia;
+let horaActual;
+let horaApertura;
+let mensaje;;
 
 const miObj = {
   0: "domingo",
@@ -23,7 +27,7 @@ console.log({horaActual});
  * Forzando el día y hora
  */
 dia = 4;
-horaActual = 11;
+horaActual = 9;
 
 /**
  * Determinar la hora apertura en función
@@ -43,13 +47,15 @@ horaActual = 11;
  */
 
 if (dia >= 1 && dia <= 5) {
-  console.log("Días de semana");
   horaApertura = 11;
+  console.log(`Día de semana ${miObj[dia]}`);
+
 } else if (dia === 6 || dia === 0) {
-  console.log("Días de fin de semana");
   horaApertura = 9;
+  console.log(`Día de fin de semana ${miObj[dia]}`);
+
 } else {
-  console.log("Ese dia vienes tú (fuera de rango)");
+  console.log("Ese día vienes tú (fuera de rango)");
 }
 
 /**
@@ -64,4 +70,76 @@ if (horaActual >= horaApertura) {
 }
 
 
+/**
+ * Optimizando la lógica
+ */
+
+dia = 5;
+horaActual = 9;
+
+//if ([0,6].includes(dia)) {
+if (dia === 0 || dia === 6) {
+  horaApertura = 9;
+  console.log(`Día de fin de semana ${miObj[dia]}`);
+} else {
+  horaApertura = 11;
+  console.log(`Día de semana ${miObj[dia]}`);
+}
+
+// Operador ternario con arreglos de días
+horaApertura = ([0,6].includes(dia)) ? 9 : 11;
+//                                   true false
+//                                   (if) (else)
+
+horaApertura = ([1,2,3,4,5].includes(dia)) ? 11 : 9;
+
+
+/**
+ * Operador ternario usando variables
+ * para los días de semana y los de
+ * fin de semana
+ */
+let diasSemana = [1,2,3,4,5];
+let diasFinDeSemana = [6,0];
+
+horaApertura = (diasSemana.includes(dia)) ? 11 : 9;
+horaApertura = (diasFinDeSemana.includes(dia)) ? 9 : 11;
+
+if (horaActual >= horaApertura) {
+  console.log("Está abierto");
+} else {
+  console.log(`Hoy es ${miObj[dia]} y aún está cerrado, abrimos a las ${horaApertura}`);
+}
+
+
+/**
+ * Operador ternario no almacenado en variable
+ * ya que usa console.log() como sentencias tanto
+ * en true como en false
+ */
+
+(horaActual >= horaApertura) ? console.log("Está abierto") : console.log(`Hoy es ${miObj[dia]} y aún está cerrado, abrimos a las ${horaApertura}`)
+
+
+/**
+ * Operador ternario  almacenado en variable
+ */
+
+mensaje = (horaActual >= horaApertura) ?  "Está abierto" : `Hoy es ${miObj[dia]} y aún está cerrado, abrimos a las ${horaApertura}`;
+
+console.log({mensaje});
+
+
+/**
+ * Operador ternario almacenado en variable
+ * utilizando mensajes en variables para simplificar
+ * la lectura de códig
+ */
+
+let mensajeAbierto = "Está abierto";
+let mensajeCerrado = `Hoy es ${miObj[dia]} y aún está cerrado, abrimos a las ${horaApertura}`;
+
+mensaje = (horaActual >= horaApertura) ? mensajeAbierto : mensajeCerrado;
+
+console.log(mensaje);
 
