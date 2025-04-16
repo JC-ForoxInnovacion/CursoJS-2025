@@ -1,3 +1,7 @@
+import { determinarDIM } from "./funciones/determinarDIM.js";
+import { determinarSexo } from "./funciones/determinarSexo.js";
+import { quitarBlancosYPonerEnMinusculas } from "./funciones/quitarBlancosYPonerEnMinusculas.js";
+
 let fechaJS;
 let diaCalendario;
 let mesCalendario;
@@ -19,42 +23,11 @@ mesCalendario = 2;
 console.log({diaCalendario});
 console.log({mesCalendario});
 
-function determinarDIM(dia, mes) {
-  // if (dia === 8 && mes === 2) {
-  //   // console.log("DIM");
-  //   return true
-  // } else {
-  //   // console.log("No es el DIM");
-  //   return false
-  // }
-
-  return (dia === 8 && mes === 2) ? true : false;
-  //return (condición) ? true : false;
-}
-
-function quitarBlancosYPonerEnMinusculas(texto) {
-    texto = texto.trim().toLowerCase();
-    texto = texto.slice(0,2);
-    return texto;
-}
-
-function determinarSexo(sexo) {
-  // if (sexo === 'si') {
-  //   // console.log("Presuntamente es mujer");
-  //   return true;
-  // } else {
-  //   // console.log("Presuntamente NO es mujer");
-  //   return false;
-  // }
-  return (sexo === 'si') ? true : false; 
-  //return (condición) ? true : false;
-}
-
 sexoUsuario = prompt("Eres mujer? [Si/No]");
 console.log({sexoUsuario});
 
 let resSexoUsuario = quitarBlancosYPonerEnMinusculas(sexoUsuario);
-sexoMujer = determinarSexo(resSexoUsuario);
+let sexoMujer = determinarSexo(resSexoUsuario);
 console.log({sexoMujer});
 
 let esDIM = determinarDIM(diaCalendario, mesCalendario);
