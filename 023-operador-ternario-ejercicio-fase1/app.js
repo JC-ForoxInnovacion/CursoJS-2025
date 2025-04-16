@@ -33,16 +33,9 @@ function determinarDIM(dia, mes) {
 }
 
 function quitarBlancosYPonerEnMinusculas(texto) {
-  console.log({texto}, typeof(texto));
-  console.log(texto.length);
-
-  if (texto) {
     texto = texto.trim().toLowerCase();
     texto = texto.slice(0,2);
     return texto;
-  }else{
-    return "no"
-  }
 }
 
 function determinarSexo(sexo) {
