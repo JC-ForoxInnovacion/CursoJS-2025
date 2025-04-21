@@ -1,47 +1,48 @@
+import { obtenerFecha } from "./funciones/obtenerFecha.js";
 import { determinarDIM } from "./funciones/determinarDIM.js";
 import { determinarSexo } from "./funciones/determinarSexo.js";
 import { quitarBlancosYPonerEnMinusculas } from "./funciones/quitarBlancosYPonerEnMinusculas.js";
+import { calcularDescuento } from "./funciones/calcularDescuento.js";
+import { mostrarMensaje } from "./funciones/mostrarMensaje.js";
 
-let fechaJS;
+let fecha;
 let diaCalendario;
 let mesCalendario;
 
 let sexoUsuario;
+let sexoMujer;
+
+let descuento;
 let importeCompra;
+let importeCompraMinimaEnDIM = 100;
+let importeCompraMinima = 150;
 
-fechaJS = new Date();
-diaCalendario = fechaJS.getDate();
-mesCalendario = fechaJS.getMonth(); // 2 = marzo
-
-console.log({fechaJS});
-console.log({diaCalendario});
-console.log({mesCalendario});
-
+fecha = obtenerFecha()
+// fecha: {diaCalendario: 21, mesCalendario: 3}
+diaCalendario = fecha.diaCalendario;
+mesCalendario = fecha.mesCalendario;
 console.log("Dia y mes manual ----------------");
-diaCalendario = 8;
-mesCalendario = 2;
+// diaCalendario = 8;
+// mesCalendario = 2;
 console.log({diaCalendario});
 console.log({mesCalendario});
-
-sexoUsuario = prompt("Eres mujer? [Si/No]");
-console.log({sexoUsuario});
-
-let resSexoUsuario = quitarBlancosYPonerEnMinusculas(sexoUsuario);
-let sexoMujer = determinarSexo(resSexoUsuario);
-console.log({sexoMujer});
 
 let esDIM = determinarDIM(diaCalendario, mesCalendario);
 //console.log({esDIM});
 
-importeCompra = 100
+importeCompra = 150;
 
-if (esDIM && sexoMujer && importeCompra >= 100) {
-  console.log("35%");
-} else if (esDIM && !sexoMujer && importeCompra >= 100){
-  console.log("15");
+if (esDIM) {
+  sexoUsuario = prompt("Eres mujer? [Si/No]");
+  console.log({sexoUsuario});
+
+  sexoUsuario = quitarBlancosYPonerEnMinusculas(sexoUsuario);
+  sexoMujer = determinarSexo(sexoUsuario);
+  console.log({sexoMujer});
+
+  descuento = calcularDescuento(esDIM, sexoMujer, importeCompra, importeCompraMinimaEnDIM);
 } else {
-  console.log("10%");
+  descuento = calcularDescuento(esDIM, sexoMujer, importeCompra, importeCompraMinima);
 }
 
-
-
+mostrarMensaje(descuento, importeCompra);
