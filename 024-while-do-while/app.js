@@ -4,6 +4,10 @@ console.log("While");
 sepLargo();
 
 /**
+ * Ciclos indeterminados
+ */
+
+/**
  * while (condición/es)
  *           true
  */
@@ -80,3 +84,38 @@ while (coches[i]) {  // recorre estrictamente el arreglo
   console.log(Boolean(coches[i]));
   i++;
 }
+
+console.log("Do While");
+sepLargo();
+
+/**
+ * NOTA: La primera vez se ejecuta SIEMPRE ya que no existe
+ *       una condición de entrada como en el while().
+ * 
+ * Hacer
+ *  ...
+ *  ...
+ * mientras (condición/es)
+ *              true
+ */
+
+num = 1;
+
+do {
+  console.log({num});
+  num++;
+} while (num % 2 === 0 && num < 5);
+
+sepCorto();
+
+
+i = -2;
+do {
+  console.log({i});
+  
+  i++;
+  if (i === 2) {
+    break;
+  }
+  
+} while (true);
