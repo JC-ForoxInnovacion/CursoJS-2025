@@ -2,12 +2,14 @@ import { obtenerFecha } from "./funciones/obtenerFecha.js";
 import { determinarDIM } from "./funciones/determinarDIM.js";
 import { determinarSexo } from "./funciones/determinarSexo.js";
 import { quitarBlancosYPonerEnMinusculas } from "./funciones/quitarBlancosYPonerEnMinusculas.js";
+import { esImporteMinimo } from "./funciones/requisitoImporteMinimo.js";
 import { calcularDescuento } from "./funciones/calcularDescuento.js";
 import { mostrarMensaje } from "./funciones/mostrarMensaje.js";
 
 let fecha;
 let diaCalendario;
 let mesCalendario;
+let esDIM;
 
 let sexoUsuario;
 let sexoMujer;
@@ -16,6 +18,7 @@ let descuento;
 let importeCompra;
 let importeCompraMinimaEnDIM = 100;
 let importeCompraMinima = 150;
+let requisitoImporteMinimo;
 
 fecha = obtenerFecha()
 // fecha: {diaCalendario: 21, mesCalendario: 3}
@@ -27,7 +30,7 @@ console.log("Dia y mes manual ----------------");
 console.log({diaCalendario});
 console.log({mesCalendario});
 
-let esDIM = determinarDIM(diaCalendario, mesCalendario);
+esDIM = determinarDIM(diaCalendario, mesCalendario);
 //console.log({esDIM});
 
 importeCompra = 150;
@@ -40,9 +43,13 @@ if (esDIM) {
   sexoMujer = determinarSexo(sexoUsuario);
   console.log({sexoMujer});
 
-  descuento = calcularDescuento(esDIM, sexoMujer, importeCompra, importeCompraMinimaEnDIM);
+  requisitoImporteMinimo = esImporteMinimo(importeCompra, importeCompraMinimaEnDIM);
+
+  descuento = calcularDescuento(esDIM, sexoMujer, requisitoImporteMinimo);
 } else {
-  descuento = calcularDescuento(esDIM, sexoMujer, importeCompra, importeCompraMinima);
+  requisitoImporteMinimo = esImporteMinimo(importeCompra, importeCompraMinima);
+
+  descuento = calcularDescuento(esDIM, sexoMujer, requisitoImporteMinimo);
 }
 
 mostrarMensaje(descuento, importeCompra);

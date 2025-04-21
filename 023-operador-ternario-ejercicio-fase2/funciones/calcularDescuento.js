@@ -1,9 +1,9 @@
-export function calcularDescuento(esDIM, sexoMujer, importeCompra, importeMinimo) {
-  if (esDIM && sexoMujer && importeCompra >= importeMinimo) {
+export function calcularDescuento(esDIM, sexoMujer, requisitoImporteMinimo) {
+  if (esDIM && sexoMujer && requisitoImporteMinimo) {
     return 35;
-  } else if (esDIM && !sexoMujer && importeCompra >= importeMinimo){
+  } else if (esDIM && !sexoMujer && requisitoImporteMinimo){
     return 15;
-  } else if (!esDIM && importeCompra >= importeMinimo) {
+  } else if (!esDIM && requisitoImporteMinimo) {
     return 10;
   } else {
     return 0;
